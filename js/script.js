@@ -1,10 +1,10 @@
 var startQuizButton = document.getElementById("startbtn");
-var startQuizDiv = document.getElementById("startpage");
+var startQuizDiv = document.getElementById("openpage");
 var scoreDisplayScore = document.getElementById("highscore-score");
 
 
 // Quiz questions and answers
-var quizQuests = [{
+var quizQuestions = [{
     question: "JavaScript file has an extension of:",
     choiceA: ".Java",
     choiceB: ".javascript",
@@ -56,7 +56,7 @@ var quizQuests = [{
 ];
 
 // Global variables
-var lastQuestIndex = quizQuests.length;
+var finalQuestIndex = quizQuestions.length;
 var currentQuestIndex = 0;
 var timeLeft = 100;
 var timerInterval;
@@ -66,13 +66,14 @@ var correct;
 // Functions purpose is to cycle through the array containing the questions and generate the q & a's
 
 var gameoverDiv = document.getElementById("gameover");
-
+var questionsEl = document.getElementById("questions");
+console.log(gameoverDiv)
 var buttonA = document.getElementById("a");
 var buttonB = document.getElementById("b");
 var buttonC = document.getElementById("c");
 var buttonD = document.getElementById("d");
 
-function generateQuizQuest() {
+function generateQuizQuestion() {
     gameoverDiv.style.display = "none";
     if (currentQuestIndex === finalQuestIndex) {
         return showScore();
@@ -87,11 +88,13 @@ function generateQuizQuest() {
 
 // Begins the quiz and starts the timer
 var quizTimer = document.getElementById("timer");
+var quizBody = document.getElementById("quiz");
+
 
 function startQuiz(){
     gameoverDiv.style.display = "none";
     startQuizDiv.style.display = "none";
-    generateQuizQuest();
+    generateQuizQuestion();
 
     //Timer
     timerInterval = setInterval(function() {
@@ -109,23 +112,25 @@ function startQuiz(){
 
 // Page that displays score once quiz is completed or time has ran out
 var highscoreInputName = document.getElementById("initials");
-var finalScoreEl = document.getElementById("finalScore");
+// var finalScoreEl = document.getElementById("finalScore");
 
 function showScore(){
-    quizBody.style.display = "none"
+    quizBody.style.display = "none";
     gameoverDiv.style.display = "flex";
     clearInterval(timerInterval);
     highscoreInputName.value = "";
-    finalScoreEl.innerHTML = "You got " + score + " out of " + quizQuestions.length + " correct!";
+    var finalScoreEl = document.getElementById("finalScore");
+    console.log(finalScoreEl)
+    finalScoreEl.innerHTML= "You got " + score + " out of " + quizQuestions.length + " correct!";
 }
 
 // On click the function runs the highscore and saves the array of the other scores saved in local storage
 // also pushes the initials and score into the array saved in the local storage, then running the function to show the high scores
 
 var submitScoreBtn = document.getElementById("submitScore");
-var highscoreContainer = document.getElementById("highscoreContainer");
+var scoreContainer = document.getElementById("scoreContainer");
 var endGameBtns = document.getElementById("endGameBtns");
-var highscoreDiv = document.getElementById("high-scorePage");
+var highscoreDiv = document.getElementById("scorePage");
 
 
 
@@ -136,7 +141,7 @@ submitScoreBtn.addEventListener("click", function highscore(){
         alert("Initials cannot be blank");
         return false;
     }else{
-        var savedHighs = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+        var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
         var currentUser = highscoreInputName.value.trim();
         var currentHighs = {
             name : currentUser,
@@ -144,11 +149,11 @@ submitScoreBtn.addEventListener("click", function highscore(){
         };
     
         gameoverDiv.style.display = "none";
-        highscoreContainer.style.display = "flex";
+        scoreContainer.style.display = "flex";
         highscoreDiv.style.display = "block";
         endGameBtns.style.display = "flex";
         
-        savedHighs.push(currentHighs);
+        savedHighscores.push(currentHighs);
         localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
         generateHighscores();
 
@@ -171,12 +176,14 @@ function generateHighscores(){
         newScoreSpan.textContent = highscores[i].score;
         scoreDisplayName.appendChild(newNameSpan);
         scoreDisplayScore.appendChild(newScoreSpan);
+    }
+}
 
 // Displays the scores page and hides the other pages
 function showHighscore(){
     startQuizDiv.style.display = "none"
     gameoverDiv.style.display = "none";
-    highscoreContainer.style.display = "flex";
+    scoreContainer.style.display = "flex";
     highscoreDiv.style.display = "block";
     endGameBtns.style.display = "flex";
 
@@ -185,6 +192,7 @@ function showHighscore(){
 
 // Clears the local storage and clears text from the page
 function clearScore(){
+    console.log("I have reached clear score")
     window.localStorage.clear();
     scoreDisplayName.textContent = "";
     scoreDisplayScore.textContent = "";
@@ -192,27 +200,29 @@ function clearScore(){
 
 // Sets all the var's back to their starting values and allows user to replay the quiz
 function replayQuiz(){
-    highscoreContainer.style.display = "none";
+    console.log("replay quiz works")
+    console.log(scoreContainer)
+    scoreContainer.style.display = "none";
     gameoverDiv.style.display = "none";
     startQuizDiv.style.display = "flex";
     timeLeft = 90;
     score = 0;
-    currentQuestionIndex = 0;
+    currentQuestIndex = 0;
 }
 
 // Grades quiz questions
 function checkAnswer(answer){
-    correct = quizQuestions[currentQuestionIndex].correctAnswer;
+    correct = quizQuestions[currentQuestIndex].correctAnswer;
 
-    if (answer === correct && currentQuestionIndex !== finalQuestionIndex) {
+    if (answer === correct && currentQuestIndex !== finalQuestIndex) {
         score++;
         alert("Correct!");
-        currentQuestionIndex++;
+        currentQuestIndex++;
         generateQuizQuestion();
         //display in the results div the answer is correct.
-    }else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex) {
+    }else if (answer !== correct && currentQuestIndex !== finalQuestIndex) {
         alert("Incorrect.")     
-        currentQuestionIndex++;
+        currentQuestIndex++;
         timeLeft = timeLeft-10;
         generateQuizQuestion();
        
@@ -223,4 +233,4 @@ function checkAnswer(answer){
 }
 
 // EventListener allowing the button to begin the quiz once clicked
-// startQuizButton.addEventListener("click",startQuiz)
+startQuizButton.addEventListener("click",startQuiz)
