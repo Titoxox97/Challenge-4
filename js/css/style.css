@@ -104,7 +104,7 @@ button:hover {
   border-bottom-style: outset;
   margin-bottom: 0.5rem;
   background-color: purple;
-  color: #eeeeee;
+  color: black;
   font-family: sans-serif;
 }
 #highscoreContainer {

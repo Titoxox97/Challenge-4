@@ -112,15 +112,13 @@ function startQuiz(){
 
 // Page that displays score once quiz is completed or time has ran out
 var highscoreInputName = document.getElementById("initials");
-// var finalScoreEl = document.getElementById("finalScore");
+var finalScoreEl = document.getElementById("finalScore");
 
 function showScore(){
     quizBody.style.display = "none";
     gameoverDiv.style.display = "flex";
     clearInterval(timerInterval);
     highscoreInputName.value = "";
-    var finalScoreEl = document.getElementById("finalScore");
-    console.log(finalScoreEl)
     finalScoreEl.innerHTML= "You got " + score + " out of " + quizQuestions.length + " correct!";
 }
 
