@@ -1,7 +1,7 @@
-# Challenge-4
+# Quiz
 
-<h1>Objective</h1>
-<p>Create a code quiz that allows the user to view their high scores and retake it multiple times</p>
+<h1>Summary</h1>
+<p>A programming quiz that allows the user to view their high scores and retake it multiple times</p>
 
 <h2>Process</h2>
 <p>Created variables in javascript that would cohesively function with the index html elements</p>;
