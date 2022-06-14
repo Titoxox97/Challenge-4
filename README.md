@@ -13,6 +13,9 @@
 <p>Used a function that grades the quiz and lets the user know how they did</p>;
 
 ## Technologies
+<p>Javascript</p>
+<p>HTML</p>
+<p>CSS</p>
 
 ## Website
 https://titoxox97.github.io/Programming-Quiz/
