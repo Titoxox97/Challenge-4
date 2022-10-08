@@ -7,6 +7,13 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+    <!-- Import highscores page so viewers can view their scores on different attempts-->
+    <div class="scores" id="scorePage">
+        <a href="./highscores.html"></a>
+    </div>
+
+    <!-- Create class and id for quiz timer, will count down as you go through the quiz-->
+    <div class="quizTimer"> Time: <span id="time">0</span></div>
     
     <div class="wrapper">
             <!-- Introduction page to A24 Movie Quiz -->
@@ -27,11 +34,7 @@
        <!-- <div id="quiz" class ="hide"> -->
                 <div id="questions" class="hide">
                     <h2 id="question-title"></h2>
-                    <button id="a" onclick="checkAnswer('a')">A</button>
-                    <button id="b" onclick="checkAnswer('b')">B</button>
-                    <button id="c" onclick="checkAnswer('c')">C</button>
-                    <button id="d" onclick="checkAnswer('d')">D</button>
-                <div id="result"></div>
+                <div id="choices" class="choices"></div>
         </div>
        
         
@@ -39,20 +42,26 @@
 
         <div id="gameover" class="hide">
             <h2>"Every rejection, every disappointment has led you here, for this moment. Don't let anything distract you from it"</h2>
-            <p>- Alpha Waymond Wang (Everything Everywhere All At Once)</p>
-            <div id="finalScore"></div>
-            <input type="text" size = "40" placeholder="Enter your initials for high score" name="intials" id="initials"/>
-            <button id="submitScore">Submit Score</button>
+            <p>- Alpha Waymond Wang (Everything Everywhere All At Once)</p><br>
+            <p>Your final score is: <span id="finalScore"></span>.</p>
+            <p>
+                Enter Initials:  
+                <input type="text" placeholder="Enter your initials for high score" id="initials" max="3"/>
+                <button id="submitScore">Submit Score</button>
+            </p> 
         </div>
-        <div id=scoreContainer>
-        <div id="scorePage">
-            <div id="score-header">
+            
+            <!--<div id="score-header">
                 <h3>User Initials</h3>
                 <h3>Score</h3>
             </div>
             <div id = "highscore-initials"></div>
             <div id = "highscore-score"></div>
+        </div> -->
+
+        <div id="feedback" class="feedback hide">
         </div>
+        
 
         <!-- Allows user to play again and clear any scores from previous attempts -->
 
