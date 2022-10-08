@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tito's Code Quiz</title>
-    <link rel="stylesheet" type="text/css" href="./js/css/style.css">
+    <title>A24 Movie Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
     
-    <div class="container">
-            <!-- Introduction to quiz layout -->
-        <div id="openpage">
-            <h2>This quiz will challenge your</h2>
-            <h2>knowledge of coding and web development.</h2>
-        
+    <div class="wrapper">
+            <!-- Introduction page to A24 Movie Quiz -->
+        <div id="openpage" class="start">
+            <h1>A24 - Movie Quiz</h1>
+            <p>
+                Test your knowledge of the A24 cinematic universe and see if you have what it takes to prove your worth as a true A24 master of knowledge.
+                <br>
+                You will be penalized for incorrect answers by subtracting 15 seconds from your time. 
+            </p>
+            
             <button id="startbtn">Test My knowledge</button>
-            <button id="pageScore" onclick="showHighscore()">High Scores</button>
-        </div>
+            <!--<button id="pageScore" onclick="showHighscore()">High Scores</button>
+        </div> -->
 
         <!-- Buttons for answer choices adding a time limit to choose one of the choices -->
 
-        <div id="quiz">
-            <div id="timer">Time left: </div>
-                <div id="questions"><p>Questions Placeholder</p></div>
+       <!-- <div id="quiz" class ="hide"> -->
+                <div id="questions" class="hide">
+                    <h2 id="question-title"></h2>
                     <button id="a" onclick="checkAnswer('a')">A</button>
                     <button id="b" onclick="checkAnswer('b')">B</button>
                     <button id="c" onclick="checkAnswer('c')">C</button>
@@ -33,8 +37,9 @@
         
         <!-- Allows user to see their highscore or just their score result if only taken once -->
 
-        <div id="gameover">
-
+        <div id="gameover" class="hide">
+            <h2>"Every rejection, every disappointment has led you here, for this moment. Don't let anything distract you from it"</h2>
+            <p>- Alpha Waymond Wang (Everything Everywhere All At Once)</p>
             <div id="finalScore"></div>
             <input type="text" size = "40" placeholder="Enter your initials for high score" name="intials" id="initials"/>
             <button id="submitScore">Submit Score</button>
