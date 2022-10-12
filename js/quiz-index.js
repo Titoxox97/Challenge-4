@@ -14,10 +14,10 @@ var quizFeedback = document.getElementById("feedback");
 
 function startQuiz() {
    // hide opening page
-    openpage.style.display = "none";
-
+    var openpagex = document.getElementById('openpage');
+    openpagex.setAttribute('class', 'hide');
     // unhide questions
-    quizQuestions.style.display = "block";
+    quizQuestions.removeAttribute('class');
 
     //Begin timer
     timerId = setInterval(function() {
@@ -78,6 +78,10 @@ function optClick(event) {
         if (time < 0) {
             time = 0;
         }
+
+
+        // Display time
+        quizTimer.textContent = time;
     }
 
 }
