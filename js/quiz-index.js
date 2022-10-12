@@ -40,10 +40,50 @@ function getQuestion() {
     // Clear previous question choices
     quizChoices.innerHTML = '';
 
-    // For loop choosing the choice elements
+    // For loop fetching the choice elements
     for (var i=0; i < currentQuest.choices.length; i++) {
 
+        // Button for each possible choice
+        var choice = currentQuest.choices[i];
+        var choicex = document.createElement('button');
+
+        choicex.setAttribute('class', 'choice');
+        choicex.setAttribute('value', choice);
+        choicex.textContent = i + 1 + choice;
+
+        // display choices on the web page
+        quizChoices.appendChild(choicex);
+
+    }
+}
+
+
+// Event for when button is clicked
+
+function optClick(event) {
+    var buttonx = event.target;
+
+    // Do nothing if the element clicked on is not a button for one of the choices
+    if (!buttonx.matches('.choice')) {
+        return;
+    }
+
+    // Check submission
+    if (buttonx.value !== questions[currentQuestIndex].answer) {
+
+        // Subtract time
+        time -= 10;
+
+        // Make sure timer doesn't display negative
+        if (time < 0) {
+            time = 0;
+        }
     }
 
 }
+
+
+
+
+
 }
