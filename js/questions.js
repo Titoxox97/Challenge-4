@@ -9,12 +9,12 @@ var quizQuestions = [
     correctAnswer: choiceD
     },
     {
-    question: "If this button is clicked, the event handler is invoked:",
-    choiceA: "OnSubmit()",
-    choiceB: ".OnLoad()",
-    choiceC: "IsPostBack()",
-    choiceD: "Onclick()",
-    correctAnswer: "d"
+    question: "What was the crime that Monte commited, landing him on the spaceship hurtling him and the rest of the prisoners towards a blackhole, in <q>Highlife</q>?",
+    choiceA: "Killed someone while driving under the influence",
+    choiceB: "Murdered his father in his sleep for abusing his mother",
+    choiceC: "Murdered his friend for having killed his dog",
+    choiceD: "Murdered his wife for being unfaithful",
+    correctAnswer: choiceC
     },
     {
     question: "A function associated with an object is called a:",

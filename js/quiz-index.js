@@ -84,6 +84,47 @@ function optClick(event) {
         quizTimer.textContent = time;
     }
 
+    // feedback on question: right/wrong
+    quizFeedback.setAttribute('class', 'feedback');
+    setTimeout(function () {
+        quizFeedback.setAttribute('class', 'feedback hide');
+    }, 1000);
+
+    // Generate next question
+    currentQuestIndex++;
+
+    // Check to make sure questions have not run out
+    if(time <=  0 || currentQuestIndex === questions.length){
+        endQuiz();
+    } else {
+        getQuestion();
+    }
+}
+function endQuiz() {
+    // timer stop
+    clearInterval(timerId);
+
+    // display end screen
+    var endScreen = document.getElementById('gameover');
+    endScreen.removeAttribute('class');
+
+    // Final score
+    var finalScorex = document.getElementById('finalScore');
+    finalScorex.textContent = time;
+
+    // hide questions
+    quizQuestions.setAttribute('class', 'hide');
+}
+
+function countDown() {
+    // time update
+    time--;
+    quizTimer.textContent = time;
+
+    // check if the user ran out of time
+    if (time <= 0) {
+        endQuiz();
+    }
 }
 
 
