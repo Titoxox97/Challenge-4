@@ -130,5 +130,7 @@ function countDown() {
 
 
 
-
 }
+
+//start quiz button
+startQuizBtn.onclick = startQuiz;
