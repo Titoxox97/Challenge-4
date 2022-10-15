@@ -4,9 +4,9 @@ var timeLeft = quizQuestions.length * 10;
 var timerId;
 
 // Variables referencing DOM elements
-var quizQuestions = document.getElementById("questions");
+var questionsx = document.getElementById("questions");
 var quizTimer = document.getElementById("time");
-var quizChoices = document.getElementById("choices");
+var choicesx = document.getElementById("choices");
 var submitScoreBtn = document.getElementById("submitScore");
 var startQuizBtn = document.getElementById("startbtn");
 var userInitials = document.getElementById("initials");
@@ -17,42 +17,41 @@ function startQuiz() {
     var openpagex = document.getElementById('openpage');
     openpagex.setAttribute('class', 'hide');
     // unhide questions
-    quizQuestions.removeAttribute('class');
+    questionsx.removeAttribute('class');
 
     //Begin timer
-    timerId = setInterval(function() {
-        // Count down
-        timeLeft--;
-        // Display time remaining
-        quizTimer.textContent = "Time left: " + timeLeft;
-
-        getQuestion();
-    })
+    timerId = setInterval(countDown, 1000);
+        
+    // display start time
+    quizTimer.textContent = time;
+    
+    getQuestion();
+ }
 
 function getQuestion() {
     // Retrieve current question from question array
-    var currentQuest = quizQuestions[currentQuestIndex];
+    var currentQuest = questionsx[currentQuestIndex];
     
     //update question title with current question 
     var currentTitle = document.getElementById('question-title');
-    currentTitle.textContent = currentQuest
+    currentTitle.textContent = currentQuest.question;
 
     // Clear previous question choices
-    quizChoices.innerHTML = '';
+    choicesx.innerHTML = '';
 
     // For loop fetching the choice elements
     for (var i=0; i < currentQuest.choices.length; i++) {
 
         // Button for each possible choice
         var choice = currentQuest.choices[i];
-        var choicex = document.createElement('button');
+        var choiceNode = document.createElement('button');
 
-        choicex.setAttribute('class', 'choice');
-        choicex.setAttribute('value', choice);
-        choicex.textContent = i + 1 + choice;
+        choiceNode.setAttribute('class', 'choice');
+        choiceNode.setAttribute('value', choice);
+        choiceNode.textContent = i + 1 + choice;
 
         // display choices on the web page
-        quizChoices.appendChild(choicex);
+        choicesx.appendChild(choiceNode);
 
     }
 }
@@ -113,7 +112,7 @@ function endQuiz() {
     finalScorex.textContent = time;
 
     // hide questions
-    quizQuestions.setAttribute('class', 'hide');
+    questionsx.setAttribute('class', 'hide');
 }
 
 function countDown() {
@@ -127,10 +126,49 @@ function countDown() {
     }
 }
 
+function saveHscore() {
 
+    // retrieve input value
+    var initials = userInitials.value.trim();
 
+    // make certain of no empty submission
+    if(initials !== '') {
+        // get saved scored from local storage or return an empty array
+        var quizResults = JSON.parse(window.localStorage.getItem('quizResults')) || [];
 
+        // new score display for user
+        var newScore = {
+            score: time,
+            initials: initials,
+        };
+
+        // save to local storage
+        quizResults.push(newScore);
+        window.localStorage.setItem('quizResults', JSON.stringify(quizResults));
+
+        // redirect to next page
+        window.location.href = 'highscores.html';
+    }
 }
+
+    function checkForSub (event) {
+
+        if (event.key === 'Enter') {
+            saveHscore();
+        }
+    }
+
+
+
+
+
+
+// submit initials
+submitScoreBtn.onclick = saveHscore;
 
 //start quiz button
 startQuizBtn.onclick = startQuiz;
+
+//user submission button elements
+choicesx.onclick = optClick;
+userInitials.onkeyup = checkForSub;
