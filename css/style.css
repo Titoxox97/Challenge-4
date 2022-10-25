@@ -2,6 +2,20 @@
   background-color: beige;
 }
 
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 120%;
+}
+
+a {
+  color: aqua;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: rgb(134, 230, 230);
+}
+
 li {
   padding-bottom: 3px;
   color: white;

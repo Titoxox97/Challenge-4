@@ -30,7 +30,7 @@ function startQuiz() {
 
 function getQuestion() {
     // Retrieve current question from question array
-    var currentQuest = questionsx[currentQuestIndex];
+    var currentQuest = quizQuestions[currentQuestIndex];
     
     //update question title with current question 
     var currentTitle = document.getElementById('question-title');
