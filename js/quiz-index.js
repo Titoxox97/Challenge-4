@@ -5,7 +5,7 @@ var timerId;
 
 // Variables referencing DOM elements
 var questionsx = document.getElementById("questions");
-var quizTimer = document.getElementById("time");
+var timerx = document.getElementById("time");
 var choicesx = document.getElementById("choices");
 var submitScoreBtn = document.getElementById("submitScore");
 var startQuizBtn = document.getElementById("startbtn");
@@ -23,7 +23,7 @@ function startQuiz() {
     timerId = setInterval(countDown, 1000);
         
     // display start time
-    quizTimer.textContent = time;
+    timerx.textContent = time;
     
     getQuestion();
  }
@@ -48,7 +48,7 @@ function getQuestion() {
 
         choiceNode.setAttribute('class', 'choice');
         choiceNode.setAttribute('value', choice);
-        choiceNode.textContent = i + 1 + choice;
+        choiceNode.textContent = i + 1 + '. ' + choice;
 
         // display choices on the web page
         choicesx.appendChild(choiceNode);
@@ -68,7 +68,7 @@ function optClick(event) {
     }
 
     // Check submission
-    if (buttonx.value !== questions[currentQuestIndex].answer) {
+    if (buttonx.value !== quizQuestions[currentQuestIndex].answer) {
 
         // Subtract time
         time -= 10;
@@ -80,7 +80,7 @@ function optClick(event) {
 
 
         // Display time
-        quizTimer.textContent = time;
+        timerx.textContent = time;
     }
 
     // feedback on question: right/wrong
@@ -118,7 +118,7 @@ function endQuiz() {
 function countDown() {
     // time update
     time--;
-    quizTimer.textContent = time;
+    timerx.textContent = time;
 
     // check if the user ran out of time
     if (time <= 0) {

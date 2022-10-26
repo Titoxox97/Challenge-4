@@ -1,14 +1,14 @@
 // List of questions, choices, and the answers
 var quizQuestions = [
     {
-    question: "How does Joy help Jack escape from the shed in <q>Room</q>?",
+    question: "How does Joy help Jack escape from the shed in 'Room'?",
     choices: [
     "Broke the skylight so Jack could climb out", 
     "Hit old Nick over the head with a baseball bat, while Jack ran out the unlocked door",
     "Figured out the combination old Nick would use to get in and out of the room and they both escaped at night while he slept",
-    "Pretended Jack had died and rolled him up in a carpet, Jack was able to get away as old Nick was taking his <q>body</q> to a dumpsite ",
+    "Pretended Jack had died and rolled him up in a carpet, Jack was able to get away as old Nick was taking his 'body' to a dumpsite ",
     ],
-    answer: "Pretended Jack had died and rolled him up in a carpet, Jack was able to get away as old Nick was taking his <q>body</q> to a dumpsite ",
+    answer: "Pretended Jack had died and rolled him up in a carpet, Jack was able to get away as old Nick was taking his 'body' to a dumpsite ",
     },
     {
     question: "What was the crime that Monte commited, landing him on the spaceship hurtling him and the rest of the prisoners towards a blackhole, in <q>Highlife</q>?",
@@ -20,7 +20,7 @@ var quizQuestions = [
     answer: "Murdered his friend for having killed his dog",
     },
     {
-    question: "A function associated with an object is called a:",
+    question: "In Midsommar which character is burned alive in a bear suit while under paralysis, due to being drugged?",
     choices:[
     "Function",
     "API",
