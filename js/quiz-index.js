@@ -93,7 +93,7 @@ function optClick(event) {
     currentQuestIndex++;
 
     // Check to make sure questions have not run out
-    if(time <=  0 || currentQuestIndex === questions.length){
+    if(time <=  0 || currentQuestIndex === quizQuestions.length){
         endQuiz();
     } else {
         getQuestion();
