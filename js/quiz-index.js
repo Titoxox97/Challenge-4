@@ -1,6 +1,6 @@
 // Variables tracking current state of quiz
 var currentQuestIndex = 0;
-var timeLeft = quizQuestions.length * 10;
+var time = quizQuestions.length * 10;
 var timerId;
 
 // Variables referencing DOM elements
