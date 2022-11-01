@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A24 Movie Quiz</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-</head>
-<body>
-    <!-- Import highscores page so viewers can view their scores on different attempts-->
-    <div class="scores" id="scorePage">
-        <a href="./highscores.html"></a>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz</title>
 
-    <!-- Create class and id for quiz timer, will count down as you go through the quiz-->
-    <div class="quizTimer">Time: <span id="time">0</span></div>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    
+    <div class="scores"><a href="./highscores.html">View Highscores</a></div>
+
+    <div class="timer">Time: <span id="time">0</span></div>
+
     
     <div class="wrapper">
-            <!-- Introduction page to A24 Movie Quiz -->
-        <div id="openpage" class="start">
-            <h1>A24 - Movie Quiz</h1>
-            <p>
-                Test your knowledge of the A24 cinematic universe and see if you have what it takes to prove your worth as a true A24 master of knowledge.
-                <br>
-                You will be penalized for incorrect answers by subtracting 10 seconds from your time. 
-            </p>
-            
-            <button id="startbtn">Test My knowledge</button>
-           
-                <div id="questions" class="hide">
-                    <h2 id="question-title"></h2>
-                <div id="choices" class="choices"></div>
-        </div>
-       
-        
-        <!-- Allows user to see their highscore or just their score result if only taken once -->
+      <div id="start-screen" class="start">
+        <h1>A24 - Movie Quiz</h1>
+        <p>
+            Test your knowledge of the A24 cinematic universe and see if you have what it takes to prove your worth as a true A24 master of knowledge.
+            <br>
+            You will be penalized for incorrect answers by subtracting 10 seconds from your time.
+        </p>
+        <button id="start">Test Me</button>
+      </div>
+   
 
-        <div id="gameover" class="hide">
-            <h2>"Every rejection, every disappointment has led you here, for this moment. Don't let anything distract you from it"</h2>
-            <p>- Alpha Waymond Wang (Everything Everywhere All At Once)</p><br>
-            <p>Your final score is: <span id="finalScore"></span>.</p>
-            <p>
-                Enter Initials:  
-                <input type="text" placeholder="Enter your initials for high score" id="initials" max="3"/>
-                <button id="submitScore">Submit Score</button>
-            </p> 
-        </div>    
+      <div id="questions" class="hide">
+        <h2 id="question-title"></h2>
+        <div id="choices" class="choices"></div>
+      </div>
 
-        <div id="feedback" class="feedback hide">
-        </div>
-        
+      <div id="end-screen" class="hide">
+        <h2>All done!</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter initials: <input type="text" id="initials" max="3" />
+          <button id="submit">Submit</button>
+        </p>
+      </div>
+
+      <div id="feedback" class="feedback hide"></div>
     </div>
-    </div>
+
     <script src="./js/questions.js"></script>
-    <script src="./js/quiz-index.js"></script>
-</body>
+    <script src="./js/logic.js"></script>
+  </body>
 </html>
