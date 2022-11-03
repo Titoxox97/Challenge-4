@@ -1,12 +1,14 @@
 html {
   background-image: url(../media/FeatureA24-Land-700x505.png);
-  height: 100%;
-  background-position: center;
+  background-repeat: round;
+  
 }
-
 body {
-  font-family: Arial;
-  font-size: 120%;
+  font-family: 'Aclonica';
+  font-size: 22px;
+  background-color: aqua;
+  background-image: url(../media/morocco.png);
+  height: 100%;
 }
 
 a {
@@ -93,4 +95,7 @@ li:nth-child(odd) {
   top: 10px;
   right: 10px;
   background-color: aqua;
+}
+
+.start {
 }
