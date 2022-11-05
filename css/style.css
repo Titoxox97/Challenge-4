@@ -1,14 +1,46 @@
 html {
   background-image: url(../media/FeatureA24-Land-700x505.png);
-  background-repeat: round;
+  background-repeat: inherit;
+}
+
+header {
   
 }
+
+#grid1 {
+  background-color: white;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 100px;
+}
+
+#grid1{
+
+}
+
+#headingcontainer, .heading, img {
+  height: 20;
+}
+
 body {
   font-family: 'Aclonica';
   font-size: 22px;
-  background-color: aqua;
-  background-image: url(../media/morocco.png);
+  background-color: yellow; 
+  /* background-image: url(../media/morocco.png);
+  background-blend-mode: darken, luminosity; */
   height: 100%;
+}
+
+
+
+
+h1 {
+  text-align: center;
+  margin-top: auto;
+}
+
+p {
+  margin-top: 0%;
 }
 
 a {
@@ -76,10 +108,15 @@ li:nth-child(odd) {
 }
 
 .scores {
+  display: grid;
+  grid-template-columns: 200px;
   position: absolute;
   top: 10px;
   left: 10px;
+  
 }
+
+.scores
 
 .feedback {
   font-style: italic;
@@ -91,11 +128,11 @@ li:nth-child(odd) {
 }
 
 .timer {
+  display: grid;
   position: absolute;
   top: 10px;
   right: 10px;
   background-color: aqua;
+
 }
 
-.start {
-}
