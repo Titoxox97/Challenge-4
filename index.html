@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coding Quiz</title>
-    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   
@@ -29,10 +31,9 @@
       </header>
     
     
-    <div class="wrapper">
-
-      <div id="start-screen" class="start">
-        <h1><img src="./media/a24-logo.png" alt="a24 logo" width="130" height="40">- Movie Quiz</h1>
+    <main id="grid2">
+      <div id="startcontainer" class="start">
+        <h1><img src="./media/a24-logo.png" alt="a24 logo" width="150" height="50"> - Movie Quiz</h1>
         <p>
             Test your knowledge of the A24 cinematic universe and see if you have what it takes to prove your worth as a true A24 master of knowledge.
             <br>
@@ -42,9 +43,11 @@
       </div>
    
 
-      <div id="questions" class="hide">
+      <div id="qscontainer" class="hide">
         <h2 id="question-title"></h2>
+        <ol>
         <div id="choices" class="choices"></div>
+        </ol>
       </div>
 
       <div id="end-screen" class="hide">
@@ -57,7 +60,7 @@
       </div>
 
       <div id="feedback" class="feedback hide"></div>
-    </div>
+    </main>
 
     <footer>
 
