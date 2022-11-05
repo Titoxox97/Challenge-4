@@ -14,33 +14,35 @@
 
   <body>
 
-      <header id="grid1">
-        <div id="scorecontainer">
-          <div class="scores"><a href="./highscores.html">View Highscores</a></div>
-        </div>
+      <header>
+        <div id="grid1">
+          <div id="scorecontainer">
+            <div class="scores"><a href="./highscores.html">View Highscores</a></div>
+          </div>
 
-        <div id="headingcontainer">
-          <div class="heading"><img src="./media/a24-logo.png" width="150" height="50"
-             alt="A24 logo"></div>
-        </div>
+          <div id="headingcontainer">
+            <div class="heading"><img src="./media/a24-logo.png" width="150" height="50"
+              alt="A24 logo"></div>
+          </div>
 
-        <div id="timercontainer">
-          <div class="timer">Time: <span id="time">0</span></div>
+          <div id="timercontainer">
+            <div class="timer">Time: <span id="time">0</span></div>
+          </div>
         </div>
-        
       </header>
     
     
-    <main id="grid2">
-      <div id="startcontainer" class="start">
-        <h1><img src="./media/a24-logo.png" alt="a24 logo" width="150" height="50"> - Movie Quiz</h1>
-        <p>
-            Test your knowledge of the A24 cinematic universe and see if you have what it takes to prove your worth as a true A24 master of knowledge.
-            <br>
-            You will be penalized for incorrect answers by subtracting 10 seconds from your time.
-        </p>
-        <button id="start">Test Me</button>
-      </div>
+    <main>
+      <div id="grid2">
+        <div id="startcontainer" class="start">
+          <h1><img src="./media/a24-logo.png" alt="a24 logo" width="150" height="50"> - Movie Quiz</h1>
+          <p>
+              Test your knowledge of the A24 cinematic universe and see if you have what it takes to prove your worth as a true A24 master of knowledge.
+              <br>
+              You will be penalized for incorrect answers by subtracting 10 seconds from your time.
+          </p>
+          <button id="start">Test Me</button>
+        </div>
    
 
       <div id="qscontainer" class="hide">
@@ -50,21 +52,30 @@
         </ol>
       </div>
 
-      <div id="end-screen" class="hide">
-        <h2>All done!</h2>
+
+      <div id="endcontainer" class="hide">
+        <h2>You Are At The End Of Your Quest, challenger. A Little Sooner Than You Expected, Perhaps. But Such Is The Case For Us All.</h2>
         <p>Your final score is <span id="final-score"></span>.</p>
         <p>
           Enter initials: <input type="text" id="initials" max="3" />
           <button id="submit">Submit</button>
         </p>
-      </div>
+      
+        
+          <div id="feedcontainer" class="feedback hide"></div>
 
-      <div id="feedback" class="feedback hide"></div>
+      </div>
+      
+    </div>
+      
+      <footer>
+        <div id="grid3">Hello</div>
+      </footer>
+
+
     </main>
 
-    <footer>
-
-    </footer>
+    
 
     <script src="./js/questions.js"></script>
     <script src="./js/logic.js"></script>
