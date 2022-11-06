@@ -3,37 +3,107 @@
   background-repeat: inherit;
 } */
 
-#grid1 {
-  background-color: white;
-  display: grid;
-  align-items: center;
-  grid-template-rows: 100px;
+body {
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 22px;
+  background-color: yellow; 
+  /* background-image: url(../media/morocco.png);
+  background-blend-mode: darken, luminosity; */
+  height: 100%;
 }
 
-.heading {
-  align-items: center;
+.wrapper {
+  display: grid;
+  grid-template-rows: 1f 4f 1f;
+  grid-template-columns: 2f 5f 2f;
+}
+
+
+#grid1 {
+  box-sizing: border-box;
+  background-color: white;
+  width: 100%;
+  height: 200px;
+  
+}
+
+#scorecontainer {
+  top: 10px;
+  left: 10px;
+}
+
+#scorecontainer, a {
+  border: 2px solid aqua;
+  border-radius: 5px;
+  color: aqua;
+  background-color: black;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#timercontainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: aqua;
+}
+
+#headingcontainer{
+  box-sizing: border-box;
+  width: 200px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
 }
 
 #grid2 {
-  margin: 100px auto 0 auto;
-  max-width: 700px;
-  display: grid;
+  box-sizing: border-box;
+  width: 800px;
+  height: 550px;
   background-color: blue;
-  grid-template-rows: 400px;
+  text-align: center;
+  margin: auto;
+
+}
+
+#startcontainer {
+ box-sizing: border-box;
+ width: 600px;
+ height: 200px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+
+h1 {
+  text-align: center;
+  margin-top: auto;
 }
 
 #qscontainer {
   margin: 100px;
 }
 
-.start {
-  text-align: center;
-  margin: 100px;
-}
-
 .hide {
   display: none;
 }
+
+button {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 100%;
+  background-color: aqua;
+  border-radius: 7.5px;
+  padding: 2px 10px;
+  color: black;
+  border: 0;
+  transition: background-color 0.2s;
+}
+
 
 #grid3 {
   display: grid;
@@ -49,51 +119,17 @@
   border-top: 2px solid #ccc;
 }
 
-
-body {
-  font-family: 'Noto Serif Telugu', serif;
-  font-size: 22px;
-  background-color: yellow; 
-  /* background-image: url(../media/morocco.png);
-  background-blend-mode: darken, luminosity; */
-  height: 100%;
-}
-
-
-
-
-h1 {
-  text-align: center;
-  margin-top: auto;
-}
-
 p {
   margin-top: 0%;
 }
 
-a {
-  color: aqua;
-  background-color: black;
-  text-decoration: none;
-  transition: color 0.2s;
-}
+
 
 a:hover {
   color: rgb(134, 230, 230);
 }
 
-button {
-  display: inline-block;
-  margin: 5px;
-  cursor: pointer;
-  font-size: 100%;
-  background-color: aqua;
-  border-radius: 7.5px;
-  padding: 2px 10px;
-  color: black;
-  border: 0;
-  transition: background-color 0.2s;
-}
+
 
 button:hover {
   background-color: 4px 3px 6px rgb(134, 230, 230);
@@ -122,10 +158,6 @@ li:nth-child(odd) {
   background-color: #bdf5f7;
 }
 
-#wrapper {
-  margin: 100px auto 0 auto;
-  max-width: 600px;
-}
 
 
 
@@ -133,7 +165,6 @@ li:nth-child(odd) {
 
 .scores {
   display: grid;
-  grid-template-columns: 200px;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -142,13 +173,5 @@ li:nth-child(odd) {
 
 
 
-.timercontainer {
-  display: grid;
-  grid-template-columns: 200px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: aqua;
 
-}
 
