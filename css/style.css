@@ -1,16 +1,17 @@
- /* html {
-  background-image: url(../media/FeatureA24-Land-700x505.png);
+html {
+  
   background-repeat: inherit;
-} */
+} 
 
 body {
   font-family: 'Noto Serif Telugu', serif;
   font-size: 22px;
-  background-color: yellow; 
+  background-image: url(../media/canadian-dollar.webp);
   /* background-image: url(../media/morocco.png);
   background-blend-mode: darken, luminosity; */
   height: 100%;
 }
+
 
 .wrapper {
   display: grid;
@@ -21,7 +22,7 @@ body {
 
 #grid1 {
   box-sizing: border-box;
-  background-color: white;
+ /* background-color: white; */
   width: 100%;
   height: 200px;
   
@@ -50,7 +51,7 @@ body {
   background-color: aqua;
 }
 
-#headingcontainer{
+#headingcontainer {
   box-sizing: border-box;
   width: 200px;
   height: 100px;
@@ -59,11 +60,12 @@ body {
   padding-top: 50px;
 }
 
+
 #grid2 {
   box-sizing: border-box;
-  width: 800px;
-  height: 550px;
-  background-color: blue;
+  width: 600px;
+  height: 500px;
+  background-color: white;
   text-align: center;
   margin: auto;
 
@@ -106,8 +108,20 @@ button {
 
 
 #grid3 {
+  box-sizing: border-box;
   display: grid;
-  background-color: #ccc;
+  /* background-color: white; */
+  width: 100%;
+  height: 200px;
+}
+
+#footercontainer {
+  box-sizing: border-box;
+  width: 200px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
 }
 
 .feedback {
